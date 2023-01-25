@@ -1,0 +1,58 @@
+---
+  apiVersion: "apps/v1"
+  kind: "Deployment"
+  metadata:
+    name: "mongodb-deployment"
+    namespace: "rahul"
+  spec:
+    selector:
+      matchLabels:
+        app: "mongodb"
+    replicas: 1
+    strategy:
+      type: "RollingUpdate"
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+    minReadySeconds: 5
+    template:
+      metadata:
+        labels:
+          app: "mongodb"
+      spec:
+        containers:
+          -
+            name: "mongodb"
+            image: "mongo"
+            imagePullPolicy: "Always"
+            env:
+              -
+                name: "MONGO_INITDB_ROOT_USERNAME"
+                value: "rahul"
+
+              -
+                name: "MONGO_INITDB_ROOT_PASSWORD"
+                value: "rahul"
+
+            ports:
+              -
+                containerPort: 27017
+                name: "mongodb"
+            resources:
+                limits:
+                    cpu: "100m"
+                    memory: "256Mi"
+                requests:
+                    cpu: "50m"
+                    memory: "128Mi"
+
+            # volumeMounts:
+            #   -
+            #     name: "mongodb-persistent-storage"
+            #     mountPath: "/data/db"
+
+        # volumes:
+        #   -
+        #     name: "mongodb-persistent-storage"
+        #     persistentVolumeClaim:
+        #       claimName: "mongodb-pv-claim-2"

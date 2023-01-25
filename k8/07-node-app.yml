@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  namespace: rahul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: rahulsharma312/node-app:v1
+        env:
+        - name: MONGO_URL
+          value: mongodb://rahul:rahul@mongodb-service.rahul:27017/
+        ports:
+        - containerPort: 5000
+        resources:
+            limits:
+                cpu: "100m"
+                memory: "256Mi"
+            requests:
+                cpu: "50m"
+                memory: "128Mi"
+      nodeSelector:
+        node-label: rahul-node
