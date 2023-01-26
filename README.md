@@ -19,3 +19,16 @@
 ## Kubectl
 
 ![image](https://user-images.githubusercontent.com/71009337/214618759-8eb2ebf7-88d0-48c4-8ce2-693d27acedf2.png)
+
+
+## React App Accessed Using Port forwading
+
+![image](https://user-images.githubusercontent.com/71009337/214788961-432ba627-32dc-44eb-a073-e8a383c0b7bb.png)
+
+![image](https://user-images.githubusercontent.com/71009337/214789011-9d75a535-1be6-45b9-a159-b93438ed7a4e.png)
+
+## Node App Accessed Using Port forwarding
+
+![image](https://user-images.githubusercontent.com/71009337/214789171-a2652dbc-8733-4ef7-89a8-f8a40904b11d.png)
+
+![image](https://user-images.githubusercontent.com/71009337/214789216-c7bea426-b841-431b-9af7-ee5a1bdec2e9.png)
