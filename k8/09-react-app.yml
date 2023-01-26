@@ -15,18 +15,19 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: rahulsharma312/react-app:v1
+        image: rahulsharma312/react-app:v4
+        imagePullPolicy: "Always"
         env:
         - name: API_URL
           value: http://node-app-service.rahul:5000/
         ports:
-        - containerPort: 3000
-        resources:
-            limits:
-                cpu: "100m"
-                memory: "256Mi"
-            requests:
-                cpu: "50m"
-                memory: "128Mi"
+        - containerPort: 80
+        # resources:
+        #     limits:
+        #         cpu: "100m"
+        #         memory: "256Mi"
+        #     requests:
+        #         cpu: "50m"
+        #         memory: "256Mi"
       nodeSelector:
         node-label: rahul-node

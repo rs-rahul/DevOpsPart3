@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: rahulsharma312/node-app:v1
+        image: rahulsharma312/node-app:v2
         env:
         - name: MONGO_URL
           value: mongodb://rahul:rahul@mongodb-service.rahul:27017/
