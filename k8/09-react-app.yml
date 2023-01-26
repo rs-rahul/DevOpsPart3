@@ -15,11 +15,11 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: rahulsharma312/react-app:v4
+        image: rahulsharma312/react-app:v6
         imagePullPolicy: "Always"
         env:
-        - name: API_URL
-          value: http://node-app-service.rahul:5000/
+        - name: REACT_APP_API_URL
+          value: node-app-service.rahul:5000/
         ports:
         - containerPort: 80
         # resources:

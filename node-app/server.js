@@ -1,5 +1,6 @@
 const express = require('express')
 const dotenv = require("dotenv")
+const cors = require('cors');
 const app = express()
 dotenv.config();
 
@@ -12,6 +13,10 @@ client.connect(err => {
   console.log("connected to mongodb")
   client.close();
 });
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.get('/', (req, res) => {
   res.json({ message: 'hello' });
